@@ -34,7 +34,8 @@ module GoogleAnalytics
 
   # @return [Boolean]
   def self.valid_tracker?
-    tracker.nil? || tracker == "" || tracker == PLACEHOLDER_TRACKER ? false : true
+    #tracker.nil? || tracker == "" || tracker == PLACEHOLDER_TRACKER ? false : true
+    tracker.present? && tracker != PLACEHOLDER_TRACKER
   end
 
   # @return [String]
